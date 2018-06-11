@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project name="AntTest">
+	<target name="info" depends="clean,compile,package,deploy">
+			<echo>this is my ant application</echo>
+	</target>
+	<target name="clean">
+			<echo>clean the build folder</echo>
+			<delete dir="dist"></delete>
+	</target>
+	<target name="init">
+			<echo>create the dist folder</echo>
+			<mkdir dir="dist"/>
+	</target>
+	<target name="compile" depends="init">
+			<echo>compile the .java files</echo>
+			<javac destdir="dist" srcdir="src"></javac>
+	</target>
+	<target name="package">
+			<echo>it packages .class files</echo>
+			<jar destfile="dist/com.training.app/*.class"></jar>
+	</target>
+	<target name="deploy">
+			<echo>this is deploy application</echo>
+	</target>
+</project>
